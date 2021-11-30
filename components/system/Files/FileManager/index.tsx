@@ -57,6 +57,10 @@ const FileManager = ({
   const { StyledFileEntry, StyledFileManager } = FileManagerViews[view];
   const { isSelecting, selectionRect, selectionStyling, selectionEvents } =
     useSelection(fileManagerRef);
+  // const fileDrop = useFileDrop({
+  //   callback: folderActions.newPath,
+  //   directory: url,
+  // });
   const fileDrop = useFileDrop({ callback: folderActions.newPath });
   const folderContextMenu = useFolderContextMenu(url, folderActions);
   const loading = (!hideLoading && isLoading) || url !== currentUrl;
